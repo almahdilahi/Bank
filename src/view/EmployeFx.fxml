@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+
+<AnchorPane prefHeight="804.0" prefWidth="695.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Employe">
+   <children>
+      <AnchorPane layoutX="-248.0" layoutY="-333.0" prefHeight="1137.0" prefWidth="945.0">
+         <children>
+            <TextField fx:id="nom_txt" layoutX="387.0" layoutY="408.0" prefHeight="25.0" prefWidth="211.0" promptText="Nom" style="-fx-background-color: transparent; -fx-border-width: 0;" />
+            <TextField fx:id="tel_txt" layoutX="387.0" layoutY="481.0" prefHeight="25.0" prefWidth="211.0" promptText="Telephone" style="-fx-background-color: transparent;" />
+            <Button layoutX="376.0" layoutY="705.0" mnemonicParsing="false" onAction="#save" prefHeight="25.0" prefWidth="97.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-radius: 10;" text="Enregistrer" textFill="#40834c" />
+            <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="313.0" layoutY="401.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Pictures/Bank/user4.png" />
+               </image>
+            </ImageView>
+            <Line endX="100.0" layoutX="493.0" layoutY="433.0" startX="-100.0" stroke="#40834c" strokeWidth="2.0" />
+            <Line endX="100.0" layoutX="493.0" layoutY="506.0" startX="-100.0" stroke="#40834c" strokeWidth="2.0" />
+            <ImageView fitHeight="32.0" fitWidth="47.0" layoutX="313.0" layoutY="473.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Pictures/Bank/phone.png" />
+               </image>
+            </ImageView>
+            <Line endX="100.0" layoutX="497.0" layoutY="579.0" startX="-100.0" stroke="#40834c" strokeWidth="2.0" />
+            <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="319.0" layoutY="551.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Pictures/Bank/agence.png" />
+               </image>
+            </ImageView>
+            <Line endX="100.0" layoutX="497.0" layoutY="647.0" startX="-100.0" stroke="#40834c" strokeWidth="2.0" />
+            <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="319.0" layoutY="619.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Pictures/Bank/ok.jpg" />
+               </image>
+            </ImageView>
+            <TableView fx:id="listeEmploye" layoutX="319.0" layoutY="871.0" prefHeight="200.0" prefWidth="436.0" style="-fx-border-color: green; -fx-border-width: 2;">
+              <columns>
+                <TableColumn prefWidth="103.0" style="-fx-border-color: green; -fx-background-color: white;" text="C1" />
+                <TableColumn prefWidth="103.0" style="-fx-border-color: green; -fx-background-color: white;" text="C2" />
+                  <TableColumn prefWidth="103.0" style="-fx-border-color: green; -fx-background-color: white;" text="C1" />
+                  <TableColumn prefWidth="121.0" style="-fx-border-color: green; -fx-background-color: white;" text="C1" />
+              </columns>
+            </TableView>
+            <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="314.0" layoutY="787.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Pictures/Bank/ok.jpg" />
+               </image>
+            </ImageView>
+            <Line endX="100.0" layoutX="493.0" layoutY="816.0" startX="-100.0" stroke="#40834c" strokeWidth="2.0" />
+            <ComboBox fx:id="cb_poste" layoutX="395.0" layoutY="555.0" prefHeight="25.0" prefWidth="202.0" promptText="Post" style="-fx-background-color: transparent;" />
+            <ComboBox fx:id="cb_agence" layoutX="395.0" layoutY="619.0" prefHeight="32.0" prefWidth="202.0" promptText="Agency" style="-fx-background-color: transparent;" />
+            <ComboBox fx:id="cb_agenceview" layoutX="392.0" layoutY="783.0" prefHeight="32.0" prefWidth="202.0" promptText="Agency" style="-fx-background-color: transparent;" />
+            <ImageView fitHeight="52.0" fitWidth="200.0" layoutX="798.0" layoutY="1071.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Picture/Bank/bank3.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="labimage" fitHeight="128.0" fitWidth="150.0" layoutX="659.0" layoutY="401.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Picture/Bank/user4.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="659.0" layoutY="555.0" mnemonicParsing="false" onAction="#parcourir" prefHeight="27.0" prefWidth="128.0" style="-fx-background-color: transparent; -fx-border-color: green; -fx-border-radius: 10;" text="Choose a picture..." textFill="#40834c" />
+            <ImageView fitHeight="60.0" fitWidth="68.0" layoutX="255.0" layoutY="337.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Picture/Bank/back.jpg" />
+               </image>
+            </ImageView>
+            <Button layoutX="255.0" layoutY="337.0" mnemonicParsing="false" onAction="#back" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: transparent;" />
+            <ImageView fitHeight="108.0" fitWidth="51.0" layoutX="894.0" layoutY="342.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Picture/Bank/logout.jpg" />
+               </image>
+            </ImageView>
+            <Button layoutX="894.0" layoutY="341.0" mnemonicParsing="false" onAction="#logout" prefHeight="52.0" prefWidth="51.0" style="-fx-background-color: transparent;" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

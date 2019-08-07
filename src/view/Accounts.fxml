@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="880.0" prefWidth="1611.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AllAccounts">
+   <children>
+      <TableView fx:id="accounts_table" layoutX="142.0" layoutY="255.0" prefHeight="453.0" prefWidth="1322.0" style="-fx-border-width: 4; -fx-border-radius: 5; -fx-border-color: #179420; -fx-background-color: transparent;">
+        <columns>
+          <TableColumn fx:id="idcompte" prefWidth="65.0" style="-fx-border-color: #179420; -fx-border-width: 5; -fx-background-color: #179420;" text="#" />
+          <TableColumn fx:id="numero" prefWidth="120.0" text="NUMERO" />
+            <TableColumn fx:id="solde" prefWidth="122.0" text="SOLDE" />
+            <TableColumn fx:id="dateouv" prefWidth="113.0" text="DATE_OUVERTURE" />
+            <TableColumn fx:id="idclient" minWidth="0.0" prefWidth="64.0" text="#CLIENT" />
+            <TableColumn fx:id="idcreateur" minWidth="0.0" text="#CREATEUR" />
+            <TableColumn fx:id="idconseille" minWidth="0.0" text="#CONSEILLE" />
+            <TableColumn fx:id="idagence" prefWidth="73.0" text="#AGENCE" />
+            <TableColumn fx:id="agio" minWidth="8.0" prefWidth="90.0" text="AGIO" />
+            <TableColumn fx:id="fraisouv" prefWidth="137.0" text="FRAIS_OUVERTURE" />
+            <TableColumn fx:id="tauxrenum" prefWidth="155.0" text="TAUX_REMUNERATION" />
+            <TableColumn fx:id="etat" prefWidth="115.0" text="ETAT" />
+            <TableColumn fx:id="type" prefWidth="112.0" text="TYPE" />
+        </columns>
+      </TableView>
+      <ImageView fitHeight="75.0" fitWidth="78.0" layoutX="777.0" layoutY="798.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Picture/Bank/back.jpg" />
+         </image>
+      </ImageView>
+      <Button layoutX="777.0" layoutY="803.0" mnemonicParsing="false" onAction="#back" prefHeight="68.0" prefWidth="78.0" style="-fx-background-color: transparent;" />
+      <ImageView fitHeight="58.0" fitWidth="200.0" layoutX="1429.0" layoutY="808.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Picture/Bank/bank3.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="58.0" fitWidth="58.0" layoutX="1508.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Picture/Bank/logout.jpg" />
+         </image>
+      </ImageView>
+      <Button layoutX="1511.0" layoutY="28.0" mnemonicParsing="false" onAction="#logout" prefHeight="58.0" prefWidth="54.0" style="-fx-background-color: transparent;" />
+      <Label layoutX="599.0" layoutY="108.0" prefHeight="50.0" prefWidth="356.0" style="-fx-background-color: #179420; -fx-background-radius: 15; -fx-text-fill: white;" text="Listes Des Comptes" textAlignment="CENTER" underline="true">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

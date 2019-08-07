@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RecuRetraitJavaBank" pageWidth="900" pageHeight="1000" columnWidth="860" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="29719a7e-905c-419b-8c06-3d5aac66dbe5">
+	<property name="com.jaspersoft.studio.data.sql.tables">
+		<![CDATA[Y29tcHRlICwyMDMsMTUsOGQ3YzRlYTgtYzcyYS00MzUzLTllNTUtMDU2ZGZjN2EyNzQyO29wZXJh
+dGlvbiAsMTUsMTUsNzYzZTA0ZDMtOGU1OS00MmNiLTk0NmMtMGZhM2M2Y2IzOGNiO2NsaWVudCAs
+MTIxLDE1LDc2MWNmNjUwLTk3NTgtNDFhMC04MGI1LTg3ZWI5MGE2YzY3ODs=]]>
+	</property>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SimpleSQL"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="monParametre" class="java.lang.String">
+		<defaultValueExpression><![CDATA["1"]]></defaultValueExpression>
+	</parameter>
+	<queryString language="SQL">
+		<![CDATA[SELECT op.idO, op.dateop, op.montant, op.type, co.numero, co.agio, co.tauxremuneration, co.type, cli.INE, cli.nomcomplet, cli.tel, cli.adresse, cli.email, cli.photo, cli.profession
+FROM client cli, compte co, operation op
+WHERE op.idCompte = co.idCompte
+AND co.idClient = cli.idC AND op.idO=$P{monParametre}]]>
+	</queryString>
+	<field name="idO" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="idO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="operation"/>
+	</field>
+	<field name="dateop" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="dateop"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="operation"/>
+	</field>
+	<field name="montant" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="montant"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="operation"/>
+	</field>
+	<field name="type" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="type"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="operation"/>
+	</field>
+	<field name="numero" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="numero"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="compte"/>
+	</field>
+	<field name="agio" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="agio"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="compte"/>
+	</field>
+	<field name="tauxremuneration" class="java.lang.Float">
+		<property name="com.jaspersoft.studio.field.label" value="tauxremuneration"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="compte"/>
+	</field>
+	<field name="COLUMN_8" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="type"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="compte"/>
+	</field>
+	<field name="INE" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="INE"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="client"/>
+	</field>
+	<field name="nomcomplet" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nomcomplet"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="client"/>
+	</field>
+	<field name="tel" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="tel"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="client"/>
+	</field>
+	<field name="adresse" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="adresse"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="client"/>
+	</field>
+	<field name="email" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="email"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="client"/>
+	</field>
+	<field name="photo" class="java.lang.Object">
+		<property name="com.jaspersoft.studio.field.label" value="photo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="client"/>
+	</field>
+	<field name="profession" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="profession"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="client"/>
+	</field>
+	<group name="InfoClient">
+		<groupHeader>
+			<band height="660">
+				<frame>
+					<reportElement mode="Opaque" x="10" y="0" width="800" height="660" uuid="9c05592c-2e93-4fed-ab39-f8365035bf94"/>
+					<frame>
+						<reportElement mode="Opaque" x="40" y="57" width="520" height="220" backcolor="#056E0C" uuid="a8a25f1f-8491-4d2f-a28d-9c2a0fd83c0e"/>
+						<staticText>
+							<reportElement mode="Opaque" x="10" y="120" width="86" height="22" forecolor="#FFFFFF" backcolor="#4AE317" uuid="744a1063-5586-47c6-8466-8a8d29497660"/>
+							<box>
+								<pen lineColor="#4AE317"/>
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#4AE317"/>
+								<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#4AE317"/>
+								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#4AE317"/>
+								<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#4AE317"/>
+							</box>
+							<textElement>
+								<font fontName="Times New Roman" size="18" isBold="true"/>
+							</textElement>
+							<text><![CDATA[Profession]]></text>
+						</staticText>
+						<staticText>
+							<reportElement mode="Opaque" x="10" y="150" width="50" height="22" forecolor="#FFFFFF" backcolor="#4AE317" uuid="055fbd3d-8a65-4036-b6a0-d0ca9b500911"/>
+							<box>
+								<pen lineColor="#4AE317"/>
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#4AE317"/>
+								<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#4AE317"/>
+								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#4AE317"/>
+								<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#4AE317"/>
+							</box>
+							<textElement>
+								<font fontName="Times New Roman" size="18" isBold="true"/>
+							</textElement>
+							<text><![CDATA[Email]]></text>
+						</staticText>
+						<staticText>
+							<reportElement mode="Opaque" x="10" y="180" width="67" height="22" forecolor="#FFFFFF" backcolor="#4AE317" uuid="c8233b4b-0b53-4fae-b2ec-5b402533b95e"/>
+							<box>
+								<pen lineColor="#4AE317"/>
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#4AE317"/>
+								<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#4AE317"/>
+								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#4AE317"/>
+								<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#4AE317"/>
+							</box>
+							<textElement>
+								<font fontName="Times New Roman" size="18" isBold="true"/>
+							</textElement>
+							<text><![CDATA[Adresse]]></text>
+						</staticText>
+						<textField>
+							<reportElement mode="Opaque" x="110" y="33" width="160" height="16" forecolor="#086E0E" uuid="bbbfba37-7d8d-427d-8cda-ae9ee065eb42"/>
+							<textElement>
+								<font fontName="Arial" size="11" isBold="true" isItalic="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{INE}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement mode="Opaque" x="150" y="63" width="180" height="16" forecolor="#086E0E" uuid="b25ea241-fbed-4ed3-b0e2-22033df722e9"/>
+							<textElement>
+								<font fontName="Arial" size="11" isBold="true" isItalic="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{nomcomplet}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement mode="Opaque" x="120" y="93" width="140" height="16" forecolor="#086E0E" uuid="85bc61e2-5270-408b-ab47-f28726a40d5f"/>
+							<textElement>
+								<font fontName="Arial" size="11" isBold="true" isItalic="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{tel}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement mode="Opaque" x="120" y="123" width="170" height="16" forecolor="#086E0E" uuid="2bde0400-1b1a-4156-8dc7-941ff67e6103"/>
+							<textElement>
+								<font fontName="Arial" size="11" isBold="true" isItalic="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{profession}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement mode="Opaque" x="90" y="156" width="180" height="16" forecolor="#086E0E" uuid="6c05f63b-13bb-492c-9308-6ec0822690fa"/>
+							<textElement>
+								<font fontName="Arial" size="11" isBold="true" isItalic="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{email}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement mode="Opaque" x="100" y="183" width="190" height="16" forecolor="#086E0E" uuid="ea9364ad-9158-45d3-bed2-2043bb4d58e4"/>
+							<textElement>
+								<font fontName="Arial" size="11" isBold="true" isItalic="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{adresse}]]></textFieldExpression>
+						</textField>
+						<image>
+							<reportElement x="350" y="33" width="149" height="149" uuid="321af35c-85df-4524-bcb6-9952225e16a8"/>
+							<imageExpression><![CDATA[$F{photo}]]></imageExpression>
+						</image>
+					</frame>
+					<staticText>
+						<reportElement mode="Opaque" x="50" y="147" width="86" height="22" forecolor="#FFFFFF" backcolor="#4AE317" uuid="f68dd02e-0ae3-4332-932a-23ab5377ddfc"/>
+						<box>
+							<pen lineColor="#4AE317"/>
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#4AE317"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#4AE317"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#4AE317"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#4AE317"/>
+						</box>
+						<textElement>
+							<font fontName="Times New Roman" size="18" isBold="true"/>
+						</textElement>
+						<text><![CDATA[Telephone]]></text>
+					</staticText>
+					<staticText>
+						<reportElement mode="Opaque" x="50" y="117" width="112" height="22" forecolor="#FFFFFF" backcolor="#4AE317" uuid="dd8d6da0-1ed6-4036-bc4a-6aa252c37851"/>
+						<box>
+							<pen lineColor="#4AE317"/>
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#4AE317"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#4AE317"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#4AE317"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#4AE317"/>
+						</box>
+						<textElement>
+							<font fontName="Times New Roman" size="18" isBold="true"/>
+						</textElement>
+						<text><![CDATA[Nom Complet]]></text>
+					</staticText>
+					<staticText>
+						<reportElement mode="Opaque" x="50" y="87" width="72" height="22" forecolor="#FFFFFF" backcolor="#4AE317" uuid="e59b3f6a-a578-4859-9e3b-33a8d9d5ef1b"/>
+						<box>
+							<pen lineColor="#4AE317"/>
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#4AE317"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#4AE317"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#4AE317"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#4AE317"/>
+						</box>
+						<textElement>
+							<font fontName="Times New Roman" size="18" isBold="true"/>
+						</textElement>
+						<text><![CDATA[ID Carte]]></text>
+					</staticText>
+					<staticText>
+						<reportElement mode="Opaque" x="40" y="20" width="175" height="22" forecolor="#FFFFFF" backcolor="#4AE317" uuid="eaae080f-b5f1-4902-b368-383c86eeccc6"/>
+						<box>
+							<pen lineColor="#4AE317"/>
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#4AE317"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#4AE317"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#4AE317"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#4AE317"/>
+						</box>
+						<textElement>
+							<font fontName="Times New Roman" size="18" isBold="true"/>
+						</textElement>
+						<text><![CDATA[Information du Client]]></text>
+					</staticText>
+					<staticText>
+						<reportElement mode="Opaque" x="80" y="620" width="134" height="22" forecolor="#FFFFFF" backcolor="#4AE317" uuid="e5109765-927d-4f7b-8edf-05af961ff703"/>
+						<box>
+							<pen lineColor="#4AE317"/>
+						</box>
+						<textElement>
+							<font fontName="Times New Roman" size="18" isBold="true"/>
+						</textElement>
+						<text><![CDATA[Numero Compte]]></text>
+					</staticText>
+					<textField>
+						<reportElement x="230" y="623" width="190" height="16" forecolor="#086E0E" uuid="de30efb6-97b6-4e37-8e53-0e5738b644c5"/>
+						<textElement>
+							<font fontName="Arial" size="13" isBold="true" isItalic="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{numero}]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement mode="Opaque" x="450" y="620" width="134" height="22" forecolor="#FFFFFF" backcolor="#4AE317" uuid="da70113c-a198-4cd4-8995-b7ec3000f408"/>
+						<box>
+							<pen lineColor="#4AE317"/>
+						</box>
+						<textElement>
+							<font fontName="Times New Roman" size="18" isBold="true"/>
+						</textElement>
+						<text><![CDATA[Type de Compte]]></text>
+					</staticText>
+					<textField>
+						<reportElement x="590" y="623" width="190" height="16" forecolor="#086E0E" uuid="8ff68ff0-c0f3-4f43-a3e5-72f3a66afed1"/>
+						<textElement>
+							<font fontName="Arial" size="13" isBold="true" isItalic="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{COLUMN_8}]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement mode="Opaque" x="20" y="570" width="190" height="22" forecolor="#FFFFFF" backcolor="#056E0C" uuid="66e5207f-803b-469f-a7e0-dfa82deb7b03"/>
+						<box>
+							<pen lineColor="#4AE317"/>
+						</box>
+						<textElement>
+							<font fontName="Times New Roman" size="18" isBold="true" isItalic="true"/>
+						</textElement>
+						<text><![CDATA[L'opération a été fait le]]></text>
+					</staticText>
+					<textField>
+						<reportElement mode="Opaque" x="210" y="570" width="160" height="22" forecolor="#FFFFFF" backcolor="#056E0C" uuid="54e9c02f-cba4-4fe3-94db-93e78aefce24"/>
+						<textElement>
+							<font fontName="Times New Roman" size="18" isBold="true" isItalic="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{dateop}]]></textFieldExpression>
+					</textField>
+					<staticText>
+						<reportElement mode="Opaque" x="130" y="371" width="560" height="109" forecolor="#FFFFFF" backcolor="#4AE317" uuid="829c4203-38a1-4df6-af95-1f3acdeccb0b"/>
+						<box>
+							<pen lineColor="#4AE317"/>
+							<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#4AE317"/>
+							<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#4AE317"/>
+							<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#4AE317"/>
+							<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#4AE317"/>
+						</box>
+						<textElement>
+							<font fontName="Times New Roman" size="18" isBold="true"/>
+						</textElement>
+						<text><![CDATA[]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="136" y="380" width="178" height="32" forecolor="#FFFFFF" uuid="5d909403-a1bc-4127-be84-76eaea8d6cb9"/>
+						<textElement>
+							<font size="20" isBold="true" isItalic="true"/>
+						</textElement>
+						<text><![CDATA[Vous Avez Fait Un ]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="480" y="380" width="30" height="32" forecolor="#FFFFFF" uuid="179b38c2-dc12-44ab-ab61-86c36eda2f2f"/>
+						<textElement>
+							<font size="20" isBold="true" isItalic="true"/>
+						</textElement>
+						<text><![CDATA[De]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="183" y="440" width="444" height="32" forecolor="#FFFFFF" uuid="51a3cdcf-a89a-44c0-8cac-577648801f09"/>
+						<textElement>
+							<font size="20" isBold="true" isItalic="true"/>
+						</textElement>
+						<text><![CDATA[On Vous Remercie De Votre Confiance. Merci.]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="636" y="380" width="44" height="32" forecolor="#FFFFFF" uuid="a5821d68-a367-451a-8e19-cd63fd1eaea9"/>
+						<textElement>
+							<font size="20" isBold="true" isItalic="true"/>
+						</textElement>
+						<text><![CDATA[CFA]]></text>
+					</staticText>
+					<textField>
+						<reportElement x="320" y="380" width="150" height="32" forecolor="#056E0C" uuid="4fd71534-a7a6-479d-b2a2-b497b833c7c3"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="SansSerif" size="15" isBold="true" isItalic="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{type}]]></textFieldExpression>
+					</textField>
+					<textField>
+						<reportElement x="510" y="380" width="126" height="32" forecolor="#056E0C" uuid="c165d078-ae13-45de-a08c-df91d85e8148"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font size="15" isBold="true" isItalic="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{montant}]]></textFieldExpression>
+					</textField>
+				</frame>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="193" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="10" y="0" width="650" height="70" backcolor="#056E0C" uuid="ed1d86a2-c57c-4406-a6f3-96b1a847888b"/>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="10" y="70" width="650" height="30" backcolor="#4AE317" uuid="b4ee88ca-4733-4257-950a-b3bd76fd86b2"/>
+				<textField pattern="MMMMM dd, yyyy">
+					<reportElement x="500" y="12" width="144" height="20" forecolor="#FFFFFF" uuid="fbb7dc30-bd91-4f30-a1ca-c6f79ad0645c"/>
+					<textElement textAlignment="Right">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+			<image scaleImage="FillFrame">
+				<reportElement mode="Transparent" x="660" y="0" width="150" height="100" uuid="2b97ab4f-915d-4721-b7c0-2bc3ef35032d"/>
+				<graphicElement fill="Solid"/>
+				<imageExpression><![CDATA["C:/Users/HP/eclipse-workspace/Bank/Picture/Bank/bank3.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement mode="Transparent" x="10" y="0" width="370" height="70" forecolor="#FFFFFF" uuid="7ab65bb3-27fd-4ac0-98f5-4326f724cc81"/>
+				<box topPadding="4" leftPadding="4" bottomPadding="4" rightPadding="4"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Times New Roman" size="50" isBold="false"/>
+				</textElement>
+				<text><![CDATA[JAVA BANK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="330" y="37" width="316" height="29" forecolor="#CCCCCC" uuid="2a214fd5-0af3-40d5-9ab5-4a35bc2f27be"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman" size="22" isBold="false"/>
+				</textElement>
+				<text><![CDATA[New Bank Development]]></text>
+			</staticText>
+			<frame>
+				<reportElement mode="Opaque" x="10" y="100" width="800" height="93" uuid="b18190f4-7ed4-47e0-8fe7-e11747afd2eb"/>
+				<staticText>
+					<reportElement mode="Opaque" x="330" y="50" width="140" height="41" forecolor="#FFFFFF" backcolor="#056E0C" uuid="2d1777b2-a961-4068-ad20-b4cfd2f6c9c7"/>
+					<textElement textAlignment="Center">
+						<font fontName="Times New Roman" size="30" isBold="true"/>
+					</textElement>
+					<text><![CDATA[RETRAIT]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<pageFooter>
+		<band height="55" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="10" y="0" width="800" height="55" uuid="a744c6c7-e3a6-4875-9228-ea708fe9f507"/>
+				<componentElement>
+					<reportElement x="290" y="0" width="80" height="50" uuid="4f205555-89c9-423e-865f-8401063a0a70"/>
+					<jr:Codabar xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+						<jr:codeExpression><![CDATA[$F{INE}]]></jr:codeExpression>
+					</jr:Codabar>
+				</componentElement>
+				<componentElement>
+					<reportElement x="370" y="0" width="80" height="50" uuid="23f19f7c-b75b-4f5c-a0ad-dc28fde99575"/>
+					<jr:Codabar xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+						<jr:codeExpression><![CDATA[$F{tel}]]></jr:codeExpression>
+					</jr:Codabar>
+				</componentElement>
+				<componentElement>
+					<reportElement x="450" y="0" width="80" height="51" uuid="d2f93432-bd94-4882-ac02-cd51d6de9c48"/>
+					<jr:Codabar xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+						<jr:codeExpression><![CDATA[$F{montant}]]></jr:codeExpression>
+					</jr:Codabar>
+				</componentElement>
+			</frame>
+		</band>
+	</pageFooter>
+</jasperReport>
