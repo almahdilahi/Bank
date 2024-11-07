@@ -33,7 +33,7 @@ public class Main extends Application {
  * 
  * BANK EST UN PROJET JAVAFX DE GESTION DE BANQUE
  * DEVELOPPE PAR LIMAMOU LAYE KA 
- * almahdilaye@gmail.com 
+ * limamoulayeka7@gmail.com 
  * (+221) 78 - 137 - 66 - 46  
  * 
  * 
